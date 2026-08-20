@@ -1,0 +1,15 @@
+--- a/meson.build
++++ b/meson.build
+@@ -20,1 +20,1 @@
+-pipewire_dep = dependency('libpipewire-0.3', required: false)
++pipewire_dep = dependency('libpipewire-0.3', required: get_option('pipewire'))
+
+--- /dev/null
++++ b/meson_options.txt
+@@ -0,0 +1,6 @@
++option(
++  'pipewire',
++  type: 'feature',
++  value: 'auto',
++  description: 'Enable PipeWire audio support for speaker testing'
++)
