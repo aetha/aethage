@@ -1,0 +1,3 @@
+USE_EXPAND="${USE_EXPAND} ARES_CORES"
+
+ARES_CORES="a26 cv fc gb gba md ms msx myvision n64 ng ngp pce ps1 sfc sg spec ws"

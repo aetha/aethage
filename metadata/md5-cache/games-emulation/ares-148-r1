@@ -1,0 +1,17 @@
+BDEPEND=virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+DEFINED_PHASES=compile configure install postinst postrm preinst prepare test
+DEPEND=alsa? ( media-libs/alsa-lib ) ao? ( media-libs/libao ) chdr? ( app-arch/zstd:= virtual/zlib:= ) gtk? ( x11-libs/gtk+:3 ) openal? ( media-libs/openal ) pulseaudio? ( media-libs/libpulse ) qt6? ( dev-qt/qtbase:6[gui,widgets] ) sdl? ( media-libs/libsdl3 ) udev? ( virtual/libudev:= ) media-libs/libglvnd x11-libs/libX11 x11-libs/libXrandr
+DESCRIPTION=Multi-system emulator focusing on accuracy and preservation
+EAPI=8
+HOMEPAGE=https://github.com/ares-emulator/ares https://ares-emu.net/
+IDEPEND=dev-util/desktop-file-utils x11-misc/shared-mime-info
+INHERIT=cmake xdg
+IUSE=+ares_cores_a26 +ares_cores_cv +ares_cores_fc +ares_cores_gb +ares_cores_gba +ares_cores_md +ares_cores_ms +ares_cores_msx +ares_cores_myvision +ares_cores_n64 +ares_cores_ng +ares_cores_ngp +ares_cores_pce +ares_cores_ps1 +ares_cores_sfc +ares_cores_sg +ares_cores_spec +ares_cores_ws accuracy alsa ao +chdr +gtk +librashader lto openal oss pulseaudio qt6 sdl tools +udev
+KEYWORDS=~amd64
+LICENSE=ISC Apache-2.0 BSD BSD-2 MIT MPL-2.0 ZLIB public-domain
+RDEPEND=alsa? ( media-libs/alsa-lib ) ao? ( media-libs/libao ) chdr? ( app-arch/zstd:= virtual/zlib:= ) gtk? ( x11-libs/gtk+:3 ) openal? ( media-libs/openal ) pulseaudio? ( media-libs/libpulse ) qt6? ( dev-qt/qtbase:6[gui,widgets] ) sdl? ( media-libs/libsdl3 ) udev? ( virtual/libudev:= ) media-libs/libglvnd x11-libs/libX11 x11-libs/libXrandr ares_cores_n64? ( media-libs/vulkan-loader ) librashader? ( media-libs/vulkan-loader )
+REQUIRED_USE=^^ ( gtk qt6 ) || ( ares_cores_a26 ares_cores_cv ares_cores_fc ares_cores_gb ares_cores_gba ares_cores_md ares_cores_ms ares_cores_msx ares_cores_myvision ares_cores_n64 ares_cores_ng ares_cores_ngp ares_cores_pce ares_cores_ps1 ares_cores_sfc ares_cores_sg ares_cores_spec ares_cores_ws )
+SLOT=0
+SRC_URI=https://github.com/ares-emulator/ares/archive/refs/tags/v148.tar.gz -> ares-148.tar.gz
+_eclasses_=toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	flag-o-matic	fd3558f73f6503093adee69adf41020d	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	ninja-utils	d063ea1900a793f93eb095010d6d9156	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	c54f532543a549f7318d6c49aaf8e953	xdg	3ef49a87c52c8b77c476351195dfe575
+_md5_=b1a44f76fedb8ae4b6ceb493529bd2f3

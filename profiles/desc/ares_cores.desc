@@ -1,0 +1,19 @@
+# Descriptions for ARES_CORES USE_EXPAND flags
+a26 - Emulate Atari 2600
+cv - Emulate ColecoVision
+fc - Emulate Nintendo Famicom / NES (+ Disk System)
+gb - Emulate Nintendo Game Boy, Game Boy Color
+gba - Emulate Nintendo Game Boy Advance
+md - Emulate Sega Mega Drive / Genesis (+ 32X, + CD), Pioneer LaserActive Mega-LD PAC
+ms - Emulate Sega Mark III / Master System, Game Gear
+msx - Emulate Microsoft MSX, MSX2
+myvision - Emulate Nichibutsu My Vision
+n64 - Emulate Nintendo 64 (+ 64DD), Seta Aleck 64
+ng - Emulate Neo Geo AES / MVS
+ngp - Emulate Neo Geo Pocket (+ Color)
+pce - Emulate NEC PC-Engine / TurboGrafx (+ CD), SuperGrafx, Pioneer LaserActive LD-ROM² PAC
+ps1 - Emulate Sony PlayStation
+sfc - Emulate Nintendo Super Famicom / SNES (+ Satellaview, + SuFami Turbo)
+sg - Emulate Sega SG-1000
+spec - Emulate Sinclair ZX Spectrum
+ws - Emulate Bandai WonderSwan, WonderSwan Color, Benesse Pocket Challenge V2

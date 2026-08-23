@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<remote-id type="github">ares-emulator/ares</remote-id>
+	</upstream>
+	<use>
+		<flag name="accuracy">Prefer accuracy over performance in certain areas in some emulator cores</flag>
+		<flag name="chdr">Support for MAME's "compressed hunks of data" format via libchdr</flag>
+		<flag name="librashader">Support for modern Slang shaders via librashader</flag>
+		<flag name="tools">Build optional developer tool - sourcery</flag>
+	</use>
+</pkgmetadata>
