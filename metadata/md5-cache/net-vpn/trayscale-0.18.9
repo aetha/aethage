@@ -1,0 +1,15 @@
+BDEPEND=app-arch/zstd >=dev-lang/go-1.26.2 virtual/pkgconfig >=dev-lang/go-1.24.11:= app-arch/unzip
+DEFINED_PHASES=compile install postinst postrm preinst unpack
+DEPEND=gui-libs/gtk:4 gui-libs/libadwaita:1
+DESCRIPTION=An unofficial GUI wrapper around the Tailscale CLI client
+EAPI=8
+HOMEPAGE=https://github.com/DeedleFake/trayscale
+IDEPEND=dev-util/desktop-file-utils x11-misc/shared-mime-info
+INHERIT=unpacker go-module desktop gnome2-utils xdg
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=gui-libs/gtk:4 gui-libs/libadwaita:1 net-vpn/tailscale
+SLOT=0
+SRC_URI=https://github.com/DeedleFake/trayscale/archive/refs/tags/v0.18.9.tar.gz -> trayscale-0.18.9.tar.gz https://github.com/DeedleFake/trayscale/releases/download/v0.18.9/trayscale-vendor.tar.zst -> trayscale-0.18.9-vendor.tar.zst
+_eclasses_=eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	unpacker	a89c769f7dcf68bd2a6d23da9ede2ad2	flag-o-matic	fd3558f73f6503093adee69adf41020d	sysroot	4c36abaf94ebd3ab32f8abea9a444121	go-env	fca4e820393c2eac25a944be8bdf6a3a	go-module	3d4b6f3f29b3ebdeb708785b3cb1743b	desktop	e447b5f77146d69797e9f03ff177f3f1	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	gnome2-utils	a8cf148ec7f5ae0b1f1d33ae5f7f9e88	xdg	3ef49a87c52c8b77c476351195dfe575
+_md5_=7e8c3bf6c5237f9f7c7dedb1b3c840bc
