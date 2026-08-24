@@ -17,7 +17,7 @@ IUSE="
 	${CORES[@]/#/+ares_cores_} accuracy alsa ao +chdr +gtk +librashader lto openal oss
 	pulseaudio qt6 sdl tools +udev
 "
-# TODO: add shaders flag to include slang-shaders when librashader package available.
+# TODO: add shaders flag to include slang-shaders when package finalised.
 
 REQUIRED_USE="
 	^^ ( gtk qt6 )
@@ -45,9 +45,9 @@ DEPEND="
 RDEPEND="
 	${DEPEND}
 	ares_cores_n64? ( media-libs/vulkan-loader )
-	librashader? ( media-libs/vulkan-loader )
+	librashader? ( media-libs/librashader[opengl] )
 "
-# TODO: Add librashader and slang-shaders to RDEPEND when packages available.
+# TODO: Add slang-shaders to RDEPEND when package finalised.
 
 BDEPEND="
 	virtual/pkgconfig
