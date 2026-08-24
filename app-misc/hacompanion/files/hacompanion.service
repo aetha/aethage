@@ -1,0 +1,14 @@
+[Unit]
+Description=Home Assistant Desktop Companion
+Documentation=https://github.com/tobias-kuendig/hacompanion
+After=graphical-session.target
+ConditionUser=!root
+
+[Service]
+ExecStart=/usr/bin/hacompanion -config=%E/hacompanion.toml
+Restart=on-failure
+RestartSec=5
+Type=simple
+
+[Install]
+WantedBy=default.target
