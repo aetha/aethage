@@ -11,7 +11,7 @@ inherit distutils-r1 virtualx
 
 DESCRIPTION="A simple GUI builder for the Python Tkinter module"
 HOMEPAGE="https://github.com/alejandroautalan/pygubu"
-SRC_URI="https://github.com/alejandroautalan/pygubu/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+SRC_URI="https://github.com/alejandroautalan/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
