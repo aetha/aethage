@@ -1,0 +1,2 @@
+# Author hard-coded focus times in this new version, wtf?
+>=gnome-extra/tempus-0.9.0
