@@ -1,15 +1,16 @@
-BDEPEND=|| ( >=dev-lang/rust-bin-1.88.0:* >=dev-lang/rust-1.88.0:* )
+BDEPEND=dev-build/cmake dev-util/cbindgen virtual/pkgconfig || ( >=dev-lang/rust-bin-1.88.0:* >=dev-lang/rust-1.88.0:* )
 DEFINED_PHASES=compile configure install pretend setup test unpack
+DEPEND=wayland? ( dev-libs/wayland ) X? ( x11-libs/libX11 x11-libs/libxcb )
 DESCRIPTION=RetroArch shader preset compiler and runtime
 EAPI=8
 HOMEPAGE=https://github.com/SnowflakePowered/librashader
 INHERIT=cargo check-reqs
-IUSE=lto +opengl static-libs tools +vulkan debug
+IUSE=lto +opengl static-libs tools +vulkan wayland X debug
 KEYWORDS=~amd64
 LICENSE=|| ( GPL-3 MPL-2.0 ) MIT Apache-2.0 BSD-2 BSD ISC MIT MPL-2.0 MPL-2.0 Unicode-3.0 ZLIB
-RDEPEND=opengl? ( media-libs/libglvnd ) vulkan? ( media-libs/vulkan-loader )
+RDEPEND=wayland? ( dev-libs/wayland ) X? ( x11-libs/libX11 x11-libs/libxcb ) opengl? ( media-libs/libglvnd ) vulkan? ( media-libs/vulkan-loader ) wayland? ( x11-libs/libxkbcommon ) X? ( x11-libs/libxkbcommon )
 REQUIRED_USE=|| ( opengl vulkan )
 SLOT=0
 SRC_URI=https://github.com/SnowflakePowered/librashader/archive/refs/tags/librashader-v0.12.0.tar.gz -> librashader-0.12.0.tar.gz https://github.com/aetha/gentoo-deps/releases/download/librashader-0.12.0/librashader-0.12.0-crates.tar.xz
 _eclasses_=cargo	c18ade5e10cfd39155908ca389968d65	check-reqs	12ab9d3fc16bfe1f87c6fb652324b57c	flag-o-matic	fd3558f73f6503093adee69adf41020d	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	rust	0e6dcc60973be397aa943d9efae0e2bf	rust-toolchain	76468983281b0a7fc167ca224f84ecfd	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5
-_md5_=5c83ad7930d4d46affd12555c17bd5d4
+_md5_=1f501c7224ad15d15e902cb4e65888a3

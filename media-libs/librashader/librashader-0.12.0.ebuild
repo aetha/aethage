@@ -3,8 +3,8 @@
 
 EAPI=8
 
-RUST_MIN_VER="1.88.0"
 CHECKREQS_DISK_BUILD="3G"
+RUST_MIN_VER="1.88.0"
 
 inherit cargo check-reqs
 
@@ -21,12 +21,30 @@ LICENSE="|| ( GPL-3 MPL-2.0 ) MIT"
 LICENSE+=" Apache-2.0 BSD-2 BSD ISC MIT MPL-2.0 MPL-2.0 Unicode-3.0 ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="lto +opengl static-libs tools +vulkan"
+
+IUSE="lto +opengl static-libs tools +vulkan wayland X"
 REQUIRED_USE="|| ( opengl vulkan )"
 
+DEPEND="
+	wayland? ( dev-libs/wayland )
+	X? (
+		x11-libs/libX11
+		x11-libs/libxcb
+	)
+"
+
 RDEPEND="
+	${DEPEND}
 	opengl? ( media-libs/libglvnd )
 	vulkan? ( media-libs/vulkan-loader )
+	wayland? ( x11-libs/libxkbcommon )
+	X? ( x11-libs/libxkbcommon )
+"
+
+BDEPEND="
+	dev-build/cmake
+	dev-util/cbindgen
+	virtual/pkgconfig
 "
 
 pkg_setup() {
