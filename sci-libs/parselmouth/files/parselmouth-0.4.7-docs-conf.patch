@@ -1,0 +1,32 @@
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -21,10 +21,6 @@
+ # import sys
+ # sys.path.insert(0, os.path.abspath('.'))
+ 
+-import git
+-import github
+-import requests
+-
+ import io
+ import os
+ import subprocess
+@@ -35,6 +31,8 @@
+ 
+ # -- General configuration ------------------------------------------------
+ 
++nbsphinx_execute = 'never'
++
+ # If your documentation needs a minimal Sphinx version, state it here.
+ #
+ # needs_sphinx = '1.0'
+@@ -141,8 +139,7 @@
+ if on_rtd:
+     branch_or_tag = branch or 'v{}'.format(release)
+ else:
+-    rev_parse_name = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).decode('ascii').strip()
+-    branch_or_tag = rev_parse_name if rev_parse_name != 'HEAD' else 'v{}'.format(release)
++    branch_or_tag = 'v{}'.format(release)
+ 
+ linkcheck_ignore = [
+     'https://www.sciencedirect.com/science/article/abs/pii/S0095447017301389',  # sciencedirect.com (Elsevier), 403 Client Error: Forbidden for url

@@ -1,0 +1,17 @@
+--- a/tests/resource_fixtures.py
++++ b/tests/resource_fixtures.py
+@@ -17,12 +17,12 @@
+ 
+ import pytest
+-import pytest_lazyfixture
++from pytest_lazy_fixtures import lf
+ 
+ import parselmouth
+ 
+ 
+ def combined_fixture(*args, **kwargs):
+-	return pytest.fixture(params=map(pytest_lazyfixture.lazy_fixture, args), ids=args, **kwargs)
++	return pytest.fixture(params=map(lf, args), ids=args, **kwargs)
+ 
+ 
+ @pytest.fixture
