@@ -15,7 +15,7 @@ LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="media-libs/libsoxr"
+DEPEND="media-libs/soxr"
 
 RDEPEND="
 	${DEPEND}
