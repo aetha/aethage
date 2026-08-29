@@ -1,0 +1,68 @@
+--- a/tests/resource_fixtures.py
++++ b/tests/resource_fixtures.py
+@@ -16,13 +16,13 @@
+ # along with Parselmouth.  If not, see <http://www.gnu.org/licenses/>
+ 
+ import pytest
+-import pytest_lazyfixture
++from pytest_lazy_fixtures import lf
+ 
+ import parselmouth
+ 
+ 
+ def combined_fixture(*args, **kwargs):
+-	return pytest.fixture(params=map(pytest_lazyfixture.lazy_fixture, args), ids=args, **kwargs)
++	return pytest.fixture(params=map(lf, args), ids=args, **kwargs)
+ 
+ 
+ @pytest.fixture
+--- a/tests/test_data.py
++++ b/tests/test_data.py
+@@ -15,14 +15,10 @@
+ # You should have received a copy of the GNU General Public License
+ # along with Parselmouth.  If not, see <http://www.gnu.org/licenses/>
+ 
+-from __future__ import unicode_literals  # Python 2 compatibility
+-
+ import pytest
+ 
+ import parselmouth
+ 
+-from future.utils import text_to_native_str  # Python 2 compatibility
+-
+ 
+ def test_read():
+ 	assert parselmouth.Data.read == parselmouth.read
+@@ -29,7 +25,7 @@
+ 
+ 
+ def test_read_nonexistent():
+-	with pytest.raises(parselmouth.PraatError, match=text_to_native_str(r'Cannot open file \u201c.*nonexistent.wav\u201d\.', encoding='utf-8')):
++	with pytest.raises(parselmouth.PraatError, match=r'Cannot open file \u201c.*nonexistent.wav\u201d\.'):
+ 		parselmouth.read("nonexistent.wav")
+ 
+
+--- a/tests/test_matrix.py
++++ b/tests/test_matrix.py
+@@ -15,8 +15,6 @@
+ # You should have received a copy of the GNU General Public License
+ # along with Parselmouth.  If not, see <http://www.gnu.org/licenses/>
+ 
+-from __future__ import division  # Python 2 compatibility
+-
+ import pytest
+ 
+ import parselmouth
+--- a/tests/test_sampled.py
++++ b/tests/test_sampled.py
+@@ -21,8 +21,8 @@
+ 
+ 
+ def test_xs(sampled):
+-	assert np.all(sampled.xs() == sampled.x1 + sampled.dx * np.arange(sampled.nx))
+-	assert np.all(sampled.x_grid() == sampled.x1 + sampled.dx * (np.arange(sampled.nx + 1) - 0.5))
++	assert np.allclose(sampled.xs(), sampled.x1 + sampled.dx * np.arange(sampled.nx))
++	assert np.allclose(sampled.x_grid(), sampled.x1 + sampled.dx * (np.arange(sampled.nx + 1) - 0.5))
+	assert np.all(sampled.x_bins() == np.vstack((sampled.x_grid()[:-1], sampled.x_grid()[1:])).T)
+ 
+

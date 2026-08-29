@@ -3,6 +3,7 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYPI_PN="praat-${PN}"
 PYTHON_COMPAT=( python3_{12..14} )
@@ -51,8 +52,7 @@ EPYTEST_PLUGINS=( pytest-lazy-fixtures )
 
 PATCHES=(
 	"${FILESDIR}/parselmouth-0.4.7-docs-conf.patch"
-	"${FILESDIR}/parselmouth-0.4.7-pytest-lazy-fixtures.patch"
-	"${FILESDIR}/parselmouth-0.4.7-tests-no-future.patch"
+	"${FILESDIR}/parselmouth-0.4.7-fix-tests.patch"
 )
 
 distutils_enable_sphinx docs
@@ -74,7 +74,7 @@ python_compile_all() {
 	fi
 }
 
-python_test() {
-	local -x PYTHONPATH="$(echo "${BUILD_DIR}"/build0/lib.*):${PYTHONPATH}"
-	epytest tests
-}
+# python_test() {
+# 	local -x PYTHONPATH="$(echo "${BUILD_DIR}"/build0/lib.*):${PYTHONPATH}"
+# 	epytest tests
+# }
