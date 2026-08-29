@@ -24,12 +24,6 @@ BDEPEND="
 distutils_enable_tests pytest
 
 python_test() {
-	local -x EINOPS_TEST_BACKENDS="numpy"
-
-	# Dynamically enable torch tests if pytorch is available for this target
-	if python_has_version "sci-ml/pytorch[${PYTHON_USEDEP}]"; then
-		EINOPS_TEST_BACKENDS+=",torch"
-	fi
-
+	local -x EINOPS_TEST_BACKENDS="numpy,torch"
 	epytest
 }
