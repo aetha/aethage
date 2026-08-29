@@ -24,11 +24,4 @@ BDEPEND="test? ( ${RDEPEND} )"
 
 distutils_enable_tests pytest
 
-python_test() {
-	local EPYTEST_DESELECT=(
-		# FP32 numerical precision flake on CPU (atol=1e-6 threshold)
-		tests/test_local_attention.py::test_cache[1000-True-True-False]
-	)
-	
-	epytest
-}
+EPYTEST_DESELECT=( "tests/test_local_attention.py::test_cache[1000-True-True-False]" )
