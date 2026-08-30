@@ -6,7 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{10..14} )
 inherit python-r1 pypi
 
-DESCRIPTION="Web apps for inspecting/understanding TensorFlow runs and graphs (PyPI wheel)"
+DESCRIPTION="Web apps for inspecting/understanding TensorFlow runs and graphs"
 HOMEPAGE="https://github.com/tensorflow/tensorboard https://www.tensorflow.org/tensorboard"
 SRC_URI="$(pypi_wheel_url)"
 S="${WORKDIR}"
@@ -33,12 +33,14 @@ RDEPEND="
 	>=dev-python/setuptools-41.0.0[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 	>=dev-python/werkzeug-1.0.1[${PYTHON_USEDEP}]
+	virtual/allow-pypi-wheels
 "
 
 BDEPEND="
 	${PYTHON_DEPS}
 	app-arch/unzip
 	dev-python/installer[${PYTHON_USEDEP}]
+	virtual/allow-pypi-wheels
 "
 
 src_unpack() {
