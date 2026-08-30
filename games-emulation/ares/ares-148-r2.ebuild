@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-inherit cmake xdg
+inherit cmake xdg optfeature
 
 DESCRIPTION="Multi-system emulator focusing on accuracy and preservation"
 HOMEPAGE="https://github.com/ares-emulator/ares https://ares-emu.net/"
@@ -17,7 +17,6 @@ IUSE="
 	${CORES[@]/#/+ares_cores_} accuracy alsa ao +chdr +gtk +librashader lto openal oss
 	pulseaudio qt6 sdl tools +udev
 "
-# TODO: add shaders flag to include slang-shaders when package finalised.
 
 REQUIRED_USE="
 	^^ ( gtk qt6 )
@@ -47,11 +46,13 @@ RDEPEND="
 	ares_cores_n64? ( media-libs/vulkan-loader )
 	librashader? ( media-libs/librashader[opengl] )
 "
-# TODO: Add slang-shaders to RDEPEND when package finalised.
 
 BDEPEND="
 	virtual/pkgconfig
 "
+
+# TODO: unvendor patch for libchdr and xxhash?
+#PATCHES=()
 
 src_configure() {
 	local -a cores=()
@@ -101,9 +102,13 @@ pkg_postinst() {
 	xdg_pkg_postinst
 
 	if use qt6; then
-		ewarn "When running ares with the Qt6 interface on a Wayland session, you"
-		ewarn "may need to set the environment variable:"
+		ewarn "When running ares with the Qt6 interface on a Wayland session, you may"
+		ewarn "need to set the environment variable:"
 		ewarn "  QT_QPA_PLATFORM=xcb"
 		ewarn "if you experience startup crashes or rendering issues."
+	fi
+
+	if use librashader; then
+		optfeature "post processing shader collection" games-emulation/slang-shaders
 	fi
 }
