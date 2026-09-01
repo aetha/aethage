@@ -1,0 +1,20 @@
+# Descriptions for FAUST_BACKENDS USE_EXPAND flags
+as - Include AssemblyScript backend
+c - Include C backend
+cmajor - Include Cmajor backend
+codebox - Include Codebox backend
+cpp - Include CPP backend
+csharp - Include CSharp backend
+dlang - Include Dlang backend
+fir - Include FIR backend
+interp - Include interpreter backend
+java - Include Java backend
+jax - Include JAX backend
+julia - Include Julia backend
+jsfx - Include JSFX backend
+llvm - Include LLVM backend
+oldcpp - Include old CPP backend
+rust - Include Rust backend
+sdf3 - Include SDF3 backend
+vhdl - Include VHDL backend
+wasm - Include WASM backend

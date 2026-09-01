@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<remote-id type="github">grame-cncm/faust</remote-id>
+	</upstream>
+	<use>
+		<flag name="machine">Build Faust Machine (bytecode interpreter) library</flag>
+		<flag name="shared">Build shared libraries (in addition to executable complier)</flag>
+		<flag name="webui">Enable web interface control via <pkg>net-libs/libmicrohttpd</pkg></flag>
+	</use>
+</pkgmetadata>

@@ -1,3 +1,5 @@
-USE_EXPAND="${USE_EXPAND} ARES_CORES"
+USE_EXPAND="${USE_EXPAND} ARES_CORES FAUST_BACKENDS"
 
 ARES_CORES="a26 cv fc gb gba md ms msx myvision n64 ng ngp pce ps1 sfc sg spec ws"
+
+FAUST_BACKENDS="as c cmajor codebox cpp csharp dlang java jax julia jsfx oldcpp rust sdf3 vhdl wasm"
