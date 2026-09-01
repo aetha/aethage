@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="hubert-base">ContentVec/HuBERT base model weights for acoustic feature extraction</flag>
+		<flag name="mute">Training silence audio samples required for model fine-tuning</flag>
+		<flag name="pretrained">RVC v1 baseline generator and discriminator checkpoints for model training</flag>
+		<flag name="pretrained-v2">RVC v2 baseline generator and discriminator checkpoints for model training</flag>
+		<flag name="pymss-weights">Band-Split and Mel-Band RoFormer model weights for music source separation</flag>
+		<flag name="rmvpe">RMVPE (Robust Model for Vocal Pitch Estimation) model weights</flag>
+		<flag name="uvr5-weights">Ultimate Vocal Remover (UVR5) weights for vocal isolation and dereverb</flag>
+	</use>
+</pkgmetadata>
