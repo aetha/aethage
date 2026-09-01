@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<remote-id type="github">RVC-Project/Retrieval-based-Voice-Conversion-WebUI</remote-id>
+	</upstream>
+	<use>
+		<flag name="gui">Enable the FreeSimpleGUI desktop user interface</flag>
+		<flag name="pipewire">Support PipeWire audio via pw-jack wrapper</flag>
+		<flag name="webui">Enable the Gradio web-based user interface</flag>
+	</use>
+</pkgmetadata>
