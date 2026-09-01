@@ -14,16 +14,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-BDEPEND="
-	test? (
-		dev-python/numpy[${PYTHON_USEDEP}]
-		sci-ml/pytorch[${PYTHON_USEDEP}]
-	)
-"
+BDEPEND="test? ( $(python_gen_cond_dep 'dev-python/numpy[${PYTHON_USEDEP}]') )"
 
 distutils_enable_tests pytest
 
 python_test() {
-	local -x EINOPS_TEST_BACKENDS="numpy,torch"
+	local -x EINOPS_TEST_BACKENDS="numpy"
 	epytest
 }
