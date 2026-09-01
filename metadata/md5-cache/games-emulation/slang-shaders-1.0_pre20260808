@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Vulkan/SPIR-V GPU shader collection for RetroArch (slang/slangp)
+EAPI=8
+HOMEPAGE=https://github.com/libretro/slang-shaders
+INHERIT=vcs-snapshot
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2 GPL-3 LGPL-3 MIT public-domain
+RDEPEND=games-emulation/libretro-info
+SLOT=0
+SRC_URI=https://github.com/libretro/slang-shaders/archive/a7f04a0698908015c6f9e3a3f446b3d17083269c.tar.gz -> slang-shaders-1.0_pre20260808.tar.gz
+_eclasses_=vcs-snapshot	05efecc60246abc94da28ed8adf74c4d
+_md5_=18bd5c158198fbac691a752770eab538

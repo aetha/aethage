@@ -1,0 +1,17 @@
+BDEPEND=>=dev-build/cmake-3.7.2 media-libs/libpng virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+DEFINED_PHASES=compile configure install postinst prepare pretend setup test
+DEPEND=faust_backends_llvm? ( llvm_slot_17? ( llvm-core/llvm:17= ) llvm_slot_18? ( llvm-core/llvm:18= ) llvm_slot_19? ( llvm-core/llvm:19= ) llvm_slot_20? ( llvm-core/llvm:20= ) llvm_slot_21? ( llvm-core/llvm:21= ) ) webui? ( net-libs/libmicrohttpd:= )
+DESCRIPTION=Functional programming language for signal processing and sound synthesis
+EAPI=8
+HOMEPAGE=https://github.com/grame-cncm/faust https://faust.grame.fr/
+INHERIT=cmake llvm-r2 check-reqs python-single-r1 optfeature
+IUSE=+faust_backends_as +faust_backends_c +faust_backends_cmajor +faust_backends_codebox +faust_backends_cpp +faust_backends_csharp +faust_backends_dlang +faust_backends_java +faust_backends_jax +faust_backends_julia +faust_backends_jsfx +faust_backends_oldcpp +faust_backends_rust +faust_backends_sdf3 +faust_backends_vhdl +faust_backends_wasm faust_backends_fir faust_backends_interp faust_backends_llvm doc machine +osc +shared static-libs test +webui +llvm_slot_21 llvm_slot_17 llvm_slot_18 llvm_slot_19 llvm_slot_20 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
+KEYWORDS=~amd64
+LICENSE=LGPL-2.1+
+RDEPEND=faust_backends_llvm? ( llvm_slot_17? ( llvm-core/llvm:17= ) llvm_slot_18? ( llvm-core/llvm:18= ) llvm_slot_19? ( llvm-core/llvm:19= ) llvm_slot_20? ( llvm-core/llvm:20= ) llvm_slot_21? ( llvm-core/llvm:21= ) ) webui? ( net-libs/libmicrohttpd:= ) python_single_target_python3_12? ( dev-lang/python:3.12 ) python_single_target_python3_13? ( dev-lang/python:3.13 ) python_single_target_python3_14? ( dev-lang/python:3.14 ) python_single_target_python3_15? ( dev-lang/python:3.15 )
+REQUIRED_USE=^^ ( python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15 ) faust_backends_llvm? ( ^^ ( llvm_slot_17 llvm_slot_18 llvm_slot_19 llvm_slot_20 llvm_slot_21 ) )
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://github.com/grame-cncm/faust/releases/download/2.85.9/faust-2.85.9.tar.gz
+_eclasses_=check-reqs	12ab9d3fc16bfe1f87c6fb652324b57c	cmake	c54f532543a549f7318d6c49aaf8e953	eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	flag-o-matic	fd3558f73f6503093adee69adf41020d	llvm-r2	56f5637f85225a4b5312d9055a7727d8	llvm-utils	e7edb4086e31c8537574b263d899f826	multilib	fc812e8eb2170022c28272d80a1f9e77	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	ninja-utils	d063ea1900a793f93eb095010d6d9156	optfeature	58cc13bdc4e9a204077e1e7c9a1d7988	python-single-r1	47d8ac9be330c9366112b78fd4f8ce57	python-utils-r1	5fd9a75ca55021d3276ce969f8e28391	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	xdg-utils	42869b3c8d86a70ef3cf75165a395e09
+_md5_=54f05fccf1158006f2a69563f61d9a78

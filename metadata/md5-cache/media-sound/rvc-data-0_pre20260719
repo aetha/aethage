@@ -1,0 +1,13 @@
+BDEPEND=mute? ( app-arch/unzip )
+DEFINED_PHASES=install pretend setup
+DESCRIPTION=Model weights and feature extractors for RVC
+EAPI=8
+HOMEPAGE=https://huggingface.co/lj1995/VoiceConversionWebUI
+INHERIT=check-reqs
+IUSE=+hubert-base mute pretrained pretrained-v2 +rmvpe uvr5-weights
+KEYWORDS=~amd64
+LICENSE=MIT
+SLOT=0
+SRC_URI=hubert-base? ( https://github.com/aetha/blobage/releases/download/rvc-data/rvc-hubert_base-1be9d36.tar.xz ) mute? ( https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/f4ccd85380cf07c20c5a5b663a579f06a51ae953/mute.zip -> rvc-mute-f4ccd85.zip ) pretrained? ( https://github.com/aetha/blobage/releases/download/rvc-data/rvc-pretrained-b9addeb.tar.xz ) pretrained-v2? ( https://github.com/aetha/blobage/releases/download/rvc-data/rvc-pretrained_v2-b7e44b2.tar.xz ) rmvpe? ( https://github.com/aetha/blobage/releases/download/rvc-data/rvc-rmvpe-0d7ebae.tar.xz ) uvr5-weights? ( https://github.com/aetha/blobage/releases/download/rvc-data/rvc-uvr5_weights-fa1b500.tar.xz )
+_eclasses_=check-reqs	12ab9d3fc16bfe1f87c6fb652324b57c
+_md5_=a3b30e82ae5f725e850670f70679c486
