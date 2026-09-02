@@ -1,2 +1,5 @@
 # Author hard-coded focus times in this new version, wtf?
 >=gnome-extra/tempus-0.9.0
+
+# Masked until >=go-1.27.0 becomes unmasked in Gentoo
+=net-vpn/trayscale-0.19.0
