@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<remote-id type="github">grame-cncm/faustlive</remote-id>
+	</upstream>
+	<use>
+		<flag name="netjack">Enable NetJACK audio backend support</flag>
+		<flag name="pipewire">Support PipeWire audio via pw-jack wrapper</flag>
+	</use>
+</pkgmetadata>
