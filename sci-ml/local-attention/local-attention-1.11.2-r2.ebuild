@@ -10,7 +10,7 @@ PYTHON_COMPAT=( python3_{10..14} )
 inherit distutils-r1 pypi
 
 DESCRIPTION="An implementation of local windowed attention for language modeling"
-HOMEPAGE="https://github.com/lucidrains/hyper-connections"
+HOMEPAGE="https://github.com/lucidrains/local-attention"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
