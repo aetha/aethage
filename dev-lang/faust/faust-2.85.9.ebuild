@@ -15,6 +15,7 @@ DESCRIPTION="Functional programming language for signal processing and sound syn
 HOMEPAGE="https://github.com/grame-cncm/faust https://faust.grame.fr/"
 SRC_URI="https://github.com/grame-cncm/${PN}/releases/download/${PV}/${P}.tar.gz"
 LICENSE="LGPL-2.1+"
+# TODO: not sure if we need to subslot, use `SLOT="0/${PV}"` if update breaks shared ABI
 SLOT="0"
 KEYWORDS="~amd64"
 
