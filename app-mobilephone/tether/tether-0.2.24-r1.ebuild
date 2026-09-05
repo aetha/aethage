@@ -102,8 +102,8 @@ pkg_postinst() {
 		ewarn "If you have the tetherd daemon running, you may need to restart it now."
 
 		if use systemd; then
-			ewarn "  sudo systemctl daemon-reload"
-			ewarn "  sudo systemctl restart '${PN}-btclass@*'"
+			ewarn "For the systemd service, this method is recommended:"
+			ewarn "  sudo pkill tetherd"
 		fi
 	fi
 }
