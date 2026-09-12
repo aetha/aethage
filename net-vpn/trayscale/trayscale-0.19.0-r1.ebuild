@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="
-	gui-libs/gtk:4
+	>=gui-libs/gtk-4.22.4:4
 	gui-libs/libadwaita:1
 "
 
@@ -35,8 +35,8 @@ src_compile() {
 	# Suppress gotk4's auto-generated CGO built-in declaration warning
 	# export CGO_CFLAGS="${CGO_CFLAGS} -Wno-builtin-declaration-mismatch"
 
-	ego build -ldflags="-X 'deedles.dev/trayscale/internal/metadata.version=v${PV}'" -mod=vendor \
-		-trimpath -v -o "${PN}" ./cmd/trayscale
+	ego build -ldflags="-X 'deedles.dev/trayscale/internal/metadata.version=v${PV}'" -trimpath \
+		-v -o "${PN}" ./cmd/trayscale
 }
 
 src_install() {

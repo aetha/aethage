@@ -1,5 +1,5 @@
-# Author hard-coded focus times in this new version, wtf?
+# Author hard-coded focus times in this new version, so nah
 >=gnome-extra/tempus-0.9.0
 
-# Masked until >=go-1.27.0 becomes unmasked in Gentoo
-=net-vpn/trayscale-0.19.0
+# Masked until >=gtk-4.22 is available in Gentoo or GURU, and ebuild is finally tested
+>=net-vpn/trayscale-0.19.0
