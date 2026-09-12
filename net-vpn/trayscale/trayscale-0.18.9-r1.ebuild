@@ -24,7 +24,8 @@ DEPEND="
 
 RDEPEND="
 	${DEPEND}
-	net-vpn/tailscale
+	>=net-vpn/tailscale-1.96.5
+	<net-vpn/tailscale-1.102.0
 "
 
 BDEPEND="
